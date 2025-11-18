@@ -196,6 +196,9 @@ class WP_Booking_Form {
 		update_post_meta( $booking_id, '_booking_time', $time );
 		update_post_meta( $booking_id, '_booking_message', $message );
 
+		// Generate cancellation token
+		WP_Booking_Cancellation::generate_cancellation_token( $booking_id );
+
 		// Send emails
 		WP_Booking_Email::send_booking_confirmation( $booking_id );
 		WP_Booking_Email::send_admin_notification( $booking_id );

@@ -92,6 +92,22 @@ class WP_Booking_Settings {
 			'wp-booking-settings',
 			'wp_booking_general_section'
 		);
+
+		add_settings_field(
+			'allow_cancellation',
+			__( 'Allow Customer Cancellation', 'wp-booking-plugin' ),
+			array( $this, 'render_allow_cancellation_field' ),
+			'wp-booking-settings',
+			'wp_booking_general_section'
+		);
+
+		add_settings_field(
+			'cancellation_deadline',
+			__( 'Cancellation Deadline (hours)', 'wp-booking-plugin' ),
+			array( $this, 'render_cancellation_deadline_field' ),
+			'wp-booking-settings',
+			'wp_booking_general_section'
+		);
 	}
 
 	/**
@@ -199,6 +215,33 @@ class WP_Booking_Settings {
 	}
 
 	/**
+	 * Render allow cancellation field.
+	 */
+	public function render_allow_cancellation_field() {
+		$settings = get_option( 'wp_booking_settings', array() );
+		$value    = isset( $settings['allow_cancellation'] ) ? $settings['allow_cancellation'] : true;
+		?>
+		<label>
+			<input type="checkbox" name="wp_booking_settings[allow_cancellation]" value="1" <?php checked( $value, true ); ?> />
+			<?php esc_html_e( 'Allow customers to cancel their own bookings', 'wp-booking-plugin' ); ?>
+		</label>
+		<p class="description"><?php esc_html_e( 'If enabled, customers will receive a cancellation link in their confirmation email.', 'wp-booking-plugin' ); ?></p>
+		<?php
+	}
+
+	/**
+	 * Render cancellation deadline field.
+	 */
+	public function render_cancellation_deadline_field() {
+		$settings = get_option( 'wp_booking_settings', array() );
+		$value    = isset( $settings['cancellation_deadline'] ) ? $settings['cancellation_deadline'] : 24;
+		?>
+		<input type="number" name="wp_booking_settings[cancellation_deadline]" value="<?php echo esc_attr( $value ); ?>" min="0" step="1" />
+		<p class="description"><?php esc_html_e( 'Minimum hours before the booking when cancellation is allowed. Set to 0 to allow cancellation anytime.', 'wp-booking-plugin' ); ?></p>
+		<?php
+	}
+
+	/**
 	 * Sanitize settings before saving.
 	 *
 	 * @param array $input Raw input data.
@@ -231,6 +274,13 @@ class WP_Booking_Settings {
 
 		if ( isset( $input['admin_email'] ) ) {
 			$sanitized['admin_email'] = sanitize_email( $input['admin_email'] );
+		}
+
+		// Cancellation settings
+		$sanitized['allow_cancellation'] = isset( $input['allow_cancellation'] ) ? true : false;
+
+		if ( isset( $input['cancellation_deadline'] ) ) {
+			$sanitized['cancellation_deadline'] = absint( $input['cancellation_deadline'] );
 		}
 
 		return $sanitized;

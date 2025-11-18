@@ -115,6 +115,10 @@ class WP_Booking_Admin {
 						$class = 'error';
 						$label = __( 'Rejected', 'wp-booking-plugin' );
 						break;
+					case 'cancelled':
+						$class = 'error';
+						$label = __( 'Cancelled', 'wp-booking-plugin' );
+						break;
 					default:
 						$label = ucfirst( $status );
 						break;

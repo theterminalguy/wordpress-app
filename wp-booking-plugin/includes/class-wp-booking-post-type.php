@@ -114,5 +114,23 @@ class WP_Booking_Post_Type {
 				),
 			)
 		);
+
+		// Cancelled status
+		register_post_status(
+			'cancelled',
+			array(
+				'label'                     => _x( 'Cancelled', 'booking status', 'wp-booking-plugin' ),
+				'public'                    => false,
+				'exclude_from_search'       => true,
+				'show_in_admin_all_list'    => true,
+				'show_in_admin_status_list' => true,
+				/* translators: %s: count of bookings */
+				'label_count'               => _n_noop(
+					'Cancelled <span class="count">(%s)</span>',
+					'Cancelled <span class="count">(%s)</span>',
+					'wp-booking-plugin'
+				),
+			)
+		);
 	}
 }

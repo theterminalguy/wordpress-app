@@ -29,7 +29,7 @@ class WP_Booking_Email {
 			get_bloginfo( 'name' )
 		);
 
-		$message = self::get_confirmation_email_template( $booking_data );
+		$message = self::get_confirmation_email_template( $booking_data, $booking_id );
 
 		$headers = array(
 			'Content-Type: text/html; charset=UTF-8',
@@ -153,10 +153,13 @@ class WP_Booking_Email {
 	/**
 	 * Get confirmation email template.
 	 *
-	 * @param array $data Booking data.
+	 * @param array $data       Booking data.
+	 * @param int   $booking_id Booking ID.
 	 * @return string Email HTML content.
 	 */
-	private static function get_confirmation_email_template( $data ) {
+	private static function get_confirmation_email_template( $data, $booking_id ) {
+		$cancellation_url = WP_Booking_Cancellation::get_cancellation_url( $booking_id );
+
 		ob_start();
 		?>
 		<!DOCTYPE html>
@@ -169,6 +172,7 @@ class WP_Booking_Email {
 				.header { background: #0073aa; color: #fff; padding: 20px; text-align: center; }
 				.content { background: #f9f9f9; padding: 20px; margin-top: 20px; }
 				.booking-details { background: #fff; padding: 15px; margin: 15px 0; border-left: 4px solid #0073aa; }
+				.button { background: #dc3545; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; margin-top: 15px; }
 				.footer { text-align: center; margin-top: 20px; font-size: 12px; color: #666; }
 			</style>
 		</head>
@@ -192,6 +196,11 @@ class WP_Booking_Email {
 					</div>
 
 					<p><?php esc_html_e( 'Your booking is currently pending approval. You will receive a confirmation email once it has been reviewed.', 'wp-booking-plugin' ); ?></p>
+
+					<p style="margin-top: 20px;">
+						<?php esc_html_e( 'Need to cancel? Click the button below:', 'wp-booking-plugin' ); ?><br>
+						<a href="<?php echo esc_url( $cancellation_url ); ?>" class="button"><?php esc_html_e( 'Cancel Booking', 'wp-booking-plugin' ); ?></a>
+					</p>
 				</div>
 				<div class="footer">
 					<p><?php echo esc_html( get_bloginfo( 'name' ) ); ?></p>
