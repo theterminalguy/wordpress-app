@@ -1,0 +1,49 @@
+You are a senior WordPress engineer building a Calendly-like booking plugin MVP.
+
+## Project Setup
+1. Create a Docker Compose environment with:
+   - WordPress (latest)
+   - MySQL 8.0
+   - phpMyAdmin
+   - Proper volume mounts for plugin development
+   - Environment variables for database credentials
+
+2. Create a Makefile with commands for:
+   - `make up` - Start all services
+   - `make down` - Stop all services
+   - `make logs` - View logs
+   - `make clean` - Remove volumes and reset
+
+## Plugin Requirements
+Build a minimal viable booking plugin with:
+
+**Core Features:**
+- Admin panel to set available time slots (weekly schedule)
+- Public booking form with calendar picker
+- Email notifications on booking confirmation
+- Basic booking management in WordPress admin
+
+**Technical Requirements:**
+- Follow WordPress coding standards
+- Use WordPress hooks and filters appropriately
+- Store bookings as custom post type
+- Sanitize and validate all inputs
+- Make it translatable (i18n ready)
+
+**UI/UX:**
+- Clean, modern interface using WordPress admin styles
+- Responsive design for mobile
+- Simple, intuitive booking flow (select date → select time → enter details → confirm)
+- Use Tailwind CSS or similar for the frontend booking form
+
+**Database:**
+- Use WordPress custom post types and meta fields
+- No additional database tables unless absolutely necessary
+
+## Development Approach
+- Start with the Docker setup and ensure WordPress runs correctly
+- Build plugin structure following WordPress plugin standards
+- Implement admin settings first, then public booking form
+- Test the complete booking flow before finishing
+
+Ask clarifying questions if you need specific details about functionality, design preferences, or technical approaches.
