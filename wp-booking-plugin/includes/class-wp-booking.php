@@ -54,6 +54,9 @@ class WP_Booking {
 		// Email notifications
 		require_once WP_BOOKING_PLUGIN_DIR . 'includes/class-wp-booking-email.php';
 
+		// Cancellation functionality
+		require_once WP_BOOKING_PLUGIN_DIR . 'includes/class-wp-booking-cancellation.php';
+
 		$this->loader = new WP_Booking_Loader();
 	}
 
@@ -102,6 +105,9 @@ class WP_Booking {
 	private function define_public_hooks() {
 		$plugin_public = new WP_Booking_Public();
 		$plugin_form = new WP_Booking_Form();
+
+		// Initialize cancellation handler
+		new WP_Booking_Cancellation();
 
 		// Enqueue public styles and scripts
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
