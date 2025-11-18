@@ -1,0 +1,274 @@
+# Copyright (C) 2024 WP Booking Plugin
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Booking Plugin 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-booking-plugin\n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+
+#: Plugin Name
+msgid "WP Booking Plugin"
+msgstr ""
+
+#: Plugin Description
+msgid "A Calendly-like booking system for WordPress with admin approval workflow"
+msgstr ""
+
+#: Common
+msgid "Name"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+#: Booking Statuses
+msgid "Pending"
+msgstr ""
+
+msgid "Pending Approval"
+msgstr ""
+
+msgid "Approved"
+msgstr ""
+
+msgid "Rejected"
+msgstr ""
+
+#: Buttons
+msgid "Approve"
+msgstr ""
+
+msgid "Reject"
+msgstr ""
+
+msgid "Approve Booking"
+msgstr ""
+
+msgid "Reject Booking"
+msgstr ""
+
+msgid "Submit Booking"
+msgstr ""
+
+msgid "Back to Date"
+msgstr ""
+
+msgid "Back to Time"
+msgstr ""
+
+msgid "Make Another Booking"
+msgstr ""
+
+msgid "Try Again"
+msgstr ""
+
+#: Form Labels
+msgid "Select a Date"
+msgstr ""
+
+msgid "Select a Time"
+msgstr ""
+
+msgid "Your Details"
+msgstr ""
+
+msgid "Full Name"
+msgstr ""
+
+msgid "Email Address"
+msgstr ""
+
+msgid "Phone Number"
+msgstr ""
+
+msgid "Message / Notes"
+msgstr ""
+
+#: Messages
+msgid "Booking submitted successfully! You will receive a confirmation email shortly."
+msgstr ""
+
+msgid "An error occurred. Please try again."
+msgstr ""
+
+msgid "No available time slots for this date."
+msgstr ""
+
+msgid "Processing..."
+msgstr ""
+
+msgid "Booking Submitted!"
+msgstr ""
+
+msgid "Your booking request has been received and is pending approval. You will receive a confirmation email shortly."
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+#: Admin
+msgid "Bookings"
+msgstr ""
+
+msgid "Booking"
+msgstr ""
+
+msgid "All Bookings"
+msgstr ""
+
+msgid "Add New Booking"
+msgstr ""
+
+msgid "Edit Booking"
+msgstr ""
+
+msgid "View Booking"
+msgstr ""
+
+msgid "Search Bookings"
+msgstr ""
+
+msgid "No bookings found."
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Booking Settings"
+msgstr ""
+
+msgid "General Settings"
+msgstr ""
+
+msgid "Configure your booking time slots and availability."
+msgstr ""
+
+msgid "Time Slot Duration (minutes)"
+msgstr ""
+
+msgid "Start Time"
+msgstr ""
+
+msgid "End Time"
+msgstr ""
+
+msgid "Available Days"
+msgstr ""
+
+msgid "Minimum Booking Notice (hours)"
+msgstr ""
+
+msgid "Admin Email for Notifications"
+msgstr ""
+
+msgid "Settings saved successfully."
+msgstr ""
+
+msgid "Shortcode"
+msgstr ""
+
+msgid "Use this shortcode to display the booking form on any page or post:"
+msgstr ""
+
+#: Days of Week
+msgid "Sunday"
+msgstr ""
+
+msgid "Monday"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+#: Email Subjects
+msgid "Booking Confirmation - %s"
+msgstr ""
+
+msgid "New Booking Pending Approval - %s"
+msgstr ""
+
+msgid "Booking Approved - %s"
+msgstr ""
+
+msgid "Booking Update - %s"
+msgstr ""
+
+#: Email Content
+msgid "Booking Received"
+msgstr ""
+
+msgid "Hello %s,"
+msgstr ""
+
+msgid "Thank you for your booking request. We have received the following details:"
+msgstr ""
+
+msgid "Your booking is currently pending approval. You will receive a confirmation email once it has been reviewed."
+msgstr ""
+
+msgid "New Booking Request"
+msgstr ""
+
+msgid "A new booking request has been submitted and is pending your approval:"
+msgstr ""
+
+msgid "View Details"
+msgstr ""
+
+msgid "Booking Approved!"
+msgstr ""
+
+msgid "Great news! Your booking has been approved."
+msgstr ""
+
+msgid "We look forward to seeing you!"
+msgstr ""
+
+msgid "We regret to inform you that your booking request could not be accommodated at this time."
+msgstr ""
+
+msgid "Requested Date:"
+msgstr ""
+
+msgid "Requested Time:"
+msgstr ""
+
+msgid "Please feel free to try booking a different time slot that may better suit your needs."
+msgstr ""

@@ -1,0 +1,32 @@
+# WordPress
+wp-content/
+!wp-content/plugins/wp-booking-plugin/
+
+# Docker volumes
+*.sql
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment
+.env
+.env.local
+
+# Temporary files
+*.tmp
+*.bak
+*.cache
